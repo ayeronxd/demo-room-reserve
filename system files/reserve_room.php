@@ -3,10 +3,8 @@ session_start();
 include 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Debug: Save POST data to a file
     file_put_contents('debug_post.txt', print_r($_POST, true));
 
-    // ✅ Updated: Removed 'date' from required field check
     if (
         !isset($_SESSION['user_id'], $_POST['section'], $_POST['professor'], $_POST['subject'],
         $_POST['start_time'], $_POST['end_time'], $_POST['room_id'])
